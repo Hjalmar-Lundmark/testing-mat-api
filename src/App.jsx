@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 let test = false
 
@@ -13,7 +12,7 @@ function postStuff() {
   fetch(`http://localhost:3000/api/meal?dishId=${12}&type=${nameValue}&time=${time}`, {
     method: 'POST',
     headers: {
-      'jwt-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImVtYWlsIjoiaGphbG1hckBnbWFpbC5jb20iLCJpYXQiOjE3MDA3Mzk2MjZ9.G0pr98txb_7kE4D9mf4vKp2NzjISrroeVNvG_MlbPcM'
+      //authentication: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImVtYWlsIjoiaGphbG1hckBnbWFpbC5jb20iLCJpYXQiOjE3MDA3Mzk2MjZ9.G0pr98txb_7kE4D9mf4vKp2NzjISrroeVNvG_MlbPcM'
     },
   })
     .then((response) => response.json())
@@ -24,10 +23,10 @@ function postStuff() {
 function App() {
 
   function getStuff() {
-    fetch('http://localhost:3000/api/dish/', {
+    fetch('http://jupiter.umea-ntig.se:3008/api/dish/', {
       method: 'GET',
       headers: {
-        'jwt-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImVtYWlsIjoiaGphbG1hckBnbWFpbC5jb20iLCJpYXQiOjE3MDA3Mzk2MjZ9.G0pr98txb_7kE4D9mf4vKp2NzjISrroeVNvG_MlbPcM'
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJsdW5kbWFya2hqYWxtYXJAZ21haWwuY29tIiwiaWF0IjoxNzAyNDU1MTAzfQ.O9LhDq-P1jFVwDlToU8p_VUrRjsqQ60R1bybCa0B9yI',
       },
     })
       .then((response) => response.json())
